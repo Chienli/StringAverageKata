@@ -25,5 +25,13 @@ namespace StringAverageKata
 
             Assert.AreEqual(1, actual);
         }
+
+        [TestMethod]
+        public void One_Two_Three_Four_Five_return_Three()
+        {
+            var actual = _stringAverage.GetAverage("one two three four five");
+
+            Assert.AreEqual(3, actual);
+        }
     }
 }
