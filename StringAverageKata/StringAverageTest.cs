@@ -6,14 +6,13 @@ namespace StringAverageKata
     [TestClass]
     public class StringAverageTest
     {
+        private readonly StringAverage _stringAverage = new StringAverage();
+
         [TestMethod]
         public void All_Zero_return_Zero()
         {
-            //arrange
-            var stringAverage = new StringAverage();
-
             //act
-            var actual = stringAverage.GetAverage("zero zero zero zero");
+            var actual = _stringAverage.GetAverage("zero zero zero zero");
 
             //assert
             Assert.AreEqual(0, actual);
