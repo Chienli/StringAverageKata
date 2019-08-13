@@ -19,8 +19,13 @@ namespace StringAverageKata
             ["nine"] = 9,
         };
 
-        public int GetAverage(string numbers)
+        public string GetAverage(string numbers)
         {
+            if (numbers.Trim() == "")
+            {
+                return "n/a";
+            }
+
             var stringNumbers = numbers.Split(' ').ToList();
 
             var sum = 0;
@@ -28,7 +33,9 @@ namespace StringAverageKata
 
             var avg = (int)sum / stringNumbers.Count;
 
-            return avg;
+            var result = _stringNumberLookUp.SingleOrDefault(x => x.Value == avg).Key;
+
+            return result;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace StringAverageKata
             var actual = _stringAverage.GetAverage("zero zero zero zero");
 
             //assert
-            Assert.AreEqual(0, actual);
+            Assert.AreEqual("zero", actual);
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace StringAverageKata
         {
             var actual = _stringAverage.GetAverage("one one one one one");
 
-            Assert.AreEqual(1, actual);
+            Assert.AreEqual("one", actual);
         }
 
         [TestMethod]
@@ -31,7 +31,15 @@ namespace StringAverageKata
         {
             var actual = _stringAverage.GetAverage("one two three four five");
 
-            Assert.AreEqual(3, actual);
+            Assert.AreEqual("three", actual);
+        }
+
+        [TestMethod]
+        public void None_return_NAN()
+        {
+            var actual = _stringAverage.GetAverage("");
+
+            Assert.AreEqual("n/a", actual);
         }
     }
 }
