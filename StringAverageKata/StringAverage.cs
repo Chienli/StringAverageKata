@@ -28,6 +28,13 @@ namespace StringAverageKata
 
             var stringNumbers = numbers.Split(' ').ToList();
 
+            foreach (var number in stringNumbers)
+            {
+                if (!_stringNumberLookUp.ContainsKey(number))
+                {
+                    return "n/a";
+                }
+            }
             var sum = 0;
             stringNumbers.ForEach(number => { sum += _stringNumberLookUp[number]; });
 

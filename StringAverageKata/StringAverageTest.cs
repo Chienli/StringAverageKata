@@ -41,5 +41,13 @@ namespace StringAverageKata
 
             Assert.AreEqual("n/a", actual);
         }
+
+        [TestMethod]
+        public void randomText_return_NAN()
+        {
+            var actual = _stringAverage.GetAverage("hello world four five");
+
+            Assert.AreEqual("n/a", actual);
+        }
     }
 }
